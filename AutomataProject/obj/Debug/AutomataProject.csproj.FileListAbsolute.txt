@@ -1,0 +1,6 @@
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\bin\Debug\AutomataProject.exe.config
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\bin\Debug\AutomataProject.exe
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\bin\Debug\AutomataProject.pdb
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\obj\Debug\AutomataProject.csprojResolveAssemblyReference.cache
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\obj\Debug\AutomataProject.exe
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\obj\Debug\AutomataProject.pdb
