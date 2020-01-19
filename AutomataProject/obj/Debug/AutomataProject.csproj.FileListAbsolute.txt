@@ -4,3 +4,7 @@ D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\bin\Debug\A
 D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\obj\Debug\AutomataProject.csprojResolveAssemblyReference.cache
 D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\obj\Debug\AutomataProject.exe
 D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\obj\Debug\AutomataProject.pdb
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\bin\Debug\AutomataProject.exe.manifest
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\bin\Debug\AutomataProject.application
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\obj\Debug\AutomataProject.exe.manifest
+D:\University Stuff\Automata\Project\AutomataProject\AutomataProject\obj\Debug\AutomataProject.application

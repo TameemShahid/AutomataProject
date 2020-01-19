@@ -15,7 +15,25 @@ namespace AutomataProject
         static void Main(string[] args)
         {
             //Defining the Path to the file
-            string file = @"C:\Users\Tameem Shahid\Desktop\SampleCode.txt";
+            string file = "";
+            Console.Write("Enter the path to file: ");
+
+            try
+            {
+                file = Console.ReadLine();
+                file = @file.ToString();
+                Console.WriteLine();
+
+                if (file == "")
+                {
+                    file = @"C:\Users\Tameem Shahid\Desktop\SampleCode.txt";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
 
             LibraryPattern(file);
             Console.WriteLine();
@@ -37,6 +55,9 @@ namespace AutomataProject
 
             OperatorsPattern(file);
             Console.WriteLine();
+
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadLine();
         }
 
         //Function to check email patterns
@@ -103,7 +124,7 @@ namespace AutomataProject
             //Anything that is NOT (a-z + A-Z + 0-9) is a special keyword
             string pattern = @"[^a-zA-Z0-9]*";
 
-            Console.WriteLine("Special Characters found:");
+            Console.WriteLine("Special Characters Found:");
             CheckPattern(file, pattern);
         }
 
@@ -114,7 +135,7 @@ namespace AutomataProject
             //followed by any combo. of (0-9)* EXCEPT/EXCLUDING all the KEYWORDS
             string pattern = @"\b(?!num|dec|str|if|rather|either|lib\(?.*\)?|iter|show|record|initial\(\))\b[a-zA-Z_]+[0-9]*[a-zA-Z_]*[0-9]*";
 
-            Console.WriteLine("Identifiers found:");
+            Console.WriteLine("Identifiers Found:");
             CheckPattern(file, pattern);
         }
 
@@ -122,9 +143,9 @@ namespace AutomataProject
         public static void DecimalPattern(string file)
         {
             //combination of digits with atleast one occurence
-            string pattern = @"\b[0-9]+\b";
+            string pattern = @"\b[0-9]+[\.]?[0-9]*\b";
 
-            Console.WriteLine("All the decimal numbers found:");
+            Console.WriteLine("Decimal Numbers Found:");
             CheckPattern(file, pattern);
         }
 
@@ -134,7 +155,7 @@ namespace AutomataProject
             //pattern containing all the operators 
             string pattern = @"\b[\+\-\*\/\%\=\!\<\>]\b|(\=\=)|(\!\=)|(\<\=)|(\>\=)";
 
-            Console.WriteLine("All the operators found:");
+            Console.WriteLine("Operators Found:");
             CheckPattern(file, pattern);
         }
 
@@ -148,29 +169,37 @@ namespace AutomataProject
             //Match variable to store regex matching result
             Match result;
 
-            //Using StreamReader to read lines
-            using (StreamReader reader = new StreamReader(file))
+            try
             {
-                //while the read line contains some data
-                while ((line = reader.ReadLine()) != null)
+                //Using StreamReader to read lines
+                using (StreamReader reader = new StreamReader(file))
                 {
-                    //fill the array with words by splitting the line on white spaces
-                    words = line.Split(null);
-
-                    //loop that will run for all the words in the array
-                    for (int i = 0; i < words.Length; i++)
+                    //while the read line contains some data
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        //Match word at ith index with the pattern
-                        result = Regex.Match(words[i], pattern);
+                        //fill the array with words by splitting the line on white spaces
+                        words = line.Split(null);
 
-                        //if match result is successful and result does not contain white spaces
-                        if (result.Success && result.Value != "")
+                        //loop that will run for all the words in the array
+                        for (int i = 0; i < words.Length; i++)
                         {
-                            //print the match result value
-                            Console.WriteLine(result.Value);
+                            //Match word at ith index with the pattern
+                            result = Regex.Match(words[i], pattern);
+
+                            //if match result is successful and result does not contain white spaces
+                            if (result.Success && result.Value != "")
+                            {
+                                //print the match result value
+                                Console.WriteLine(result.Value);
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("File Not Found!");
             }
         }
     }
